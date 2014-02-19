@@ -6,7 +6,9 @@ import mesosphere.marathon.client.model.v2.App;
 import mesosphere.marathon.client.model.v2.DeleteAppTaskResponse;
 import mesosphere.marathon.client.model.v2.DeleteAppTasksResponse;
 import mesosphere.marathon.client.model.v2.GetAppResponse;
+import mesosphere.marathon.client.model.v2.GetAppTasksResponse;
 import mesosphere.marathon.client.model.v2.GetAppsResponse;
+import mesosphere.marathon.client.model.v2.GetTasksResponse;
 import feign.RequestLine;
 
 public interface Marathon {
@@ -17,14 +19,14 @@ public interface Marathon {
 	GetAppResponse getApp(@Named("id") String id);
 
 	@RequestLine("GET /v2/apps/{id}/tasks")
-	String getAppTasks(@Named("id") String id);
+	GetAppTasksResponse getAppTasks(@Named("id") String id);
 
 	@RequestLine("GET /v2/tasks")
-	String getTasks();
+	GetTasksResponse getTasks();
 
 	@RequestLine("POST /v2/apps")
 	void createApp(App app);
-	
+
 	@RequestLine("PUT /v2/apps/{app_id}")
 	void updateApp(@Named("app_id") String appId, App app);
 
