@@ -13,7 +13,7 @@ public class MarathonClient {
 	static class MarathonHeadersInterceptor implements RequestInterceptor {
 		@Override
 		public void apply(RequestTemplate template) {
-			template.header("Content-Type", "application/json");
+			template.header("Accept", "application/json");
 		}
 	}
 
