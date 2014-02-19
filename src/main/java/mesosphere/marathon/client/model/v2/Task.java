@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 public class Task {
 	private String host;
 	private String id;
+	private String appId;
 	private Collection<Integer> ports;
 	private String stagedAt;
 	private String startedAt;
@@ -26,6 +27,14 @@ public class Task {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getAppId() {
+		return appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
 	}
 
 	public Collection<Integer> getPorts() {
