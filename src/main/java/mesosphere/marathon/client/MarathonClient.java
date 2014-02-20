@@ -1,8 +1,6 @@
 package mesosphere.marathon.client;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
+import mesosphere.marathon.client.utils.ModelUtils;
 import feign.Feign;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -18,10 +16,8 @@ public class MarathonClient {
 	}
 
 	public static Marathon getInstance(String endpoint) {
-		Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping()
-				.create();
-		GsonDecoder decoder = new GsonDecoder(gson);
-		GsonEncoder encoder = new GsonEncoder(gson);
+		GsonDecoder decoder = new GsonDecoder(ModelUtils.GSON);
+		GsonEncoder encoder = new GsonEncoder(ModelUtils.GSON);
 		return Feign.builder().encoder(encoder).decoder(decoder)
 				.requestInterceptor(new MarathonHeadersInterceptor())
 				.target(Marathon.class, endpoint);
