@@ -1,7 +1,6 @@
 package mesosphere.marathon.client.model.v2;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import mesosphere.marathon.client.utils.ModelUtils;
 
 public class DeleteAppTaskResponse {
 	private Task task;
@@ -16,8 +15,7 @@ public class DeleteAppTaskResponse {
 
 	@Override
 	public String toString() {
-		Gson gson = new GsonBuilder().disableHtmlEscaping().create();
-		return gson.toJson(this);
+		return ModelUtils.toString(this);
 	}
 
 }

@@ -2,8 +2,7 @@ package mesosphere.marathon.client.model.v2;
 
 import java.util.Collection;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import mesosphere.marathon.client.utils.ModelUtils;
 
 public class Task {
 	private String host;
@@ -63,8 +62,7 @@ public class Task {
 
 	@Override
 	public String toString() {
-		Gson gson = new GsonBuilder().disableHtmlEscaping().create();
-		return gson.toJson(this);
+		return ModelUtils.toString(this);
 	}
 
 }

@@ -5,8 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import mesosphere.marathon.client.utils.ModelUtils;
 
 public class App {
 	private String id;
@@ -163,8 +162,7 @@ public class App {
 
 	@Override
 	public String toString() {
-		Gson gson = new GsonBuilder().disableHtmlEscaping().create();
-		return gson.toJson(this);
+		return ModelUtils.toString(this);
 	}
 
 }
