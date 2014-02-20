@@ -50,3 +50,7 @@ Run the following command from the root of repository, to build the client JAR:
 ```
 $ mvn clean install
 ```
+
+## Bugs
+
+Bugs can be reported using Github issues.
