@@ -2,7 +2,21 @@
 
 This project is a Java library for communicating with Marathon API. At this point this library supports version v2 of Marathon API, please refer [docs](https://github.com/mesosphere/marathon/blob/master/REST.md) for more details.
 
-## Example
+## Using marathon-client in your maven project
+
+Add marathon-client as a dependency:
+
+```
+<dependency>
+  <groupId>com.github.mohitsoni</groupId>
+  <artifactId>marathon-client</artifactId>
+  <version>0.4.0</version>
+</dependency>
+```
+
+Please look at [releases](https://github.com/mohitsoni/marathon-client/releases) page for more versions.
+
+## Usage
 
 ### Initialization
 
