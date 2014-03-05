@@ -20,39 +20,47 @@ Please look at [releases](https://github.com/mohitsoni/marathon-client/releases)
 
 ### Initialization
 
+The following piece of code initializes the client. ```MarathonClient.getInstance()``` method expects the endpoint for marathon:
+
 ```
 String endpoint = "<Marathon's endpoint>";
 Marathon marathon = MarathonClient.getInstance(endpoint);
 ```
 
-### Get apps
+### Getting all applications
+
+The following will return all the applications that have been created:
 
 ```
 GetAppsResponse appsResponse = marathon.getApps();
 ```
 
-### Create app
+### Create a new application
 
+The following example demonstrates how a new application can be created:
 ```
 App app = new App();
-app.setId("myapp");
-app.setCmd("echo hi");
+app.setId("echohisleepbye-app");
+app.setCmd("echo hi; sleep 10; echo bye;");
 app.setCpus(1.0);
-app.setMem(128.0);
+app.setMem(16.0);
 app.setInstances(1);
 marathon.createApp(app);
 ```
 
-### Get app
+### Get details about an existing application
+
+The following example, demostrates how to get details about an already created application:
 
 ```
-GetAppResponse appGet = marathon.getApp("myapp");
+GetAppResponse appGet = marathon.getApp("echohisleepbye-app");
 ```
 
-### Delete app
+### Delete an application
 
+The following example demostrate, how one can delete an existing application:
 ```
-marathon.deleteApp("myapp");
+marathon.deleteApp("echohisleepbye-app");
 ```
 
 ## Building
