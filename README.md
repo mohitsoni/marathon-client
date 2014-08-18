@@ -10,7 +10,7 @@ Add marathon-client as a dependency:
 <dependency>
   <groupId>com.github.mohitsoni</groupId>
   <artifactId>marathon-client</artifactId>
-  <version>0.4.0</version>
+  <version>0.4.1</version>
 </dependency>
 ```
 
