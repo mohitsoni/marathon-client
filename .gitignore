@@ -13,3 +13,7 @@ target/
 .classpath
 .project
 .settings/
+
+# Idea
+*.iml
+.idea/
