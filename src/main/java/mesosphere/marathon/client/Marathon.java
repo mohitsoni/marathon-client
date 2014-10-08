@@ -2,16 +2,11 @@ package mesosphere.marathon.client;
 
 import javax.inject.Named;
 
-import mesosphere.marathon.client.model.v2.App;
-import mesosphere.marathon.client.model.v2.DeleteAppTaskResponse;
-import mesosphere.marathon.client.model.v2.DeleteAppTasksResponse;
-import mesosphere.marathon.client.model.v2.GetAppResponse;
-import mesosphere.marathon.client.model.v2.GetAppTasksResponse;
-import mesosphere.marathon.client.model.v2.GetAppsResponse;
-import mesosphere.marathon.client.model.v2.GetTasksResponse;
+import mesosphere.marathon.client.model.v2.*;
 import feign.RequestLine;
 
 public interface Marathon {
+    // Apps
 	@RequestLine("GET /v2/apps")
 	GetAppsResponse getApps();
 
@@ -40,4 +35,20 @@ public interface Marathon {
 	@RequestLine("DELETE /v2/apps/{app_id}/tasks/{task_id}?scale={scale}")
 	DeleteAppTaskResponse deleteAppTask(@Named("app_id") String appId,
 			@Named("task_id") String taskId, @Named("scale") String scale);
+
+    // Groups
+
+    // Tasks
+
+    // Deployments
+
+    // Event Subscriptions
+
+    // Queue
+
+    // Server Info
+    @RequestLine("GET /v2/info")
+    GetServerInfoResponse getServerInfo();
+
+    // Miscellaneous
 }
