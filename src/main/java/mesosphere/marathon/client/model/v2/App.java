@@ -15,7 +15,7 @@ public class App {
 	private Double mem;
 	private Collection<String> uris;
 	private List<List<String>> constraints;
-	private ContainerInfo container;
+	private Container container;
 	private Map<String, String> env;
 	private String executor;
 	private List<Integer> ports;
@@ -90,11 +90,11 @@ public class App {
 		this.constraints.add(constraint);
 	}
 
-	public ContainerInfo getContainer() {
+	public Container getContainer() {
 		return container;
 	}
 
-	public void setContainer(ContainerInfo container) {
+	public void setContainer(Container container) {
 		this.container = container;
 	}
 
