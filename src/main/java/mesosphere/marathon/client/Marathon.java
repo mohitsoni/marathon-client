@@ -38,6 +38,9 @@ public interface Marathon {
 	@RequestLine("PUT /v2/apps/{app_id}")
 	void updateApp(@Named("app_id") String appId, App app);
 
+	@RequestLine("POST /v2/apps/{id}/restart?force={force}")
+	void restartApp(@Named("id") String id,@Named("force") boolean force);
+
 	@RequestLine("DELETE /v2/apps/{id}")
 	Result deleteApp(@Named("id") String id) throws MarathonException;
 
