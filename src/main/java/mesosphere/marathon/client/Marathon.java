@@ -11,6 +11,8 @@ import mesosphere.marathon.client.model.v2.Deployment;
 import mesosphere.marathon.client.model.v2.GetAppResponse;
 import mesosphere.marathon.client.model.v2.GetAppTasksResponse;
 import mesosphere.marathon.client.model.v2.GetAppsResponse;
+import mesosphere.marathon.client.model.v2.GetEventSubscriptionRegisterResponse;
+import mesosphere.marathon.client.model.v2.GetEventSubscriptionsResponse;
 import mesosphere.marathon.client.model.v2.GetServerInfoResponse;
 import mesosphere.marathon.client.model.v2.GetTasksResponse;
 import mesosphere.marathon.client.model.v2.Group;
@@ -76,6 +78,15 @@ public interface Marathon {
 
     // Event Subscriptions
 
+    @RequestLine("POST /v2/eventSubscriptions?callbackUrl={url}")
+    public GetEventSubscriptionRegisterResponse register(@Named("url") String url);
+
+    @RequestLine("DELETE /v2/eventSubscriptions?callbackUrl={url}")
+    public GetEventSubscriptionRegisterResponse unregister(@Named("url") String url);
+
+    @RequestLine("GET /v2/eventSubscriptions")
+    public GetEventSubscriptionsResponse subscriptions();
+
     // Queue
 
     // Server Info
@@ -83,4 +94,6 @@ public interface Marathon {
     GetServerInfoResponse getServerInfo();
 
     // Miscellaneous
+
+
 }
