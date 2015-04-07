@@ -1,6 +1,7 @@
 package mesosphere.marathon.client.model.v2;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import mesosphere.marathon.client.utils.ModelUtils;
@@ -9,7 +10,7 @@ public class Docker {
 	private String image;
 	private String network;
 	private Collection<Port> portMappings;
-	private Map<String, String> parameters;
+	private List<Parameter> parameters;
 	private boolean privileged;
 
 	public String getImage() {
@@ -44,11 +45,11 @@ public class Docker {
 		this.privileged = privileged;
 	}
 
-	public Map<String, String> getParameters() {
+	public List<Parameter> getParameters() {
 		return parameters;
 	}
 
-	public void setParameters(Map<String, String> parameters) {
+	public void setParameters(List<Parameter> parameters) {
 		this.parameters = parameters;
 	}
 
