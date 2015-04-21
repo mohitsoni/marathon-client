@@ -1,14 +1,14 @@
 package mesosphere.marathon.client.model.v2;
 
+import mesosphere.marathon.client.utils.ModelUtils;
+
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-
-import mesosphere.marathon.client.utils.ModelUtils;
 
 public class Docker {
 	private String image;
 	private String network;
+	private boolean forcePullImage;
 	private Collection<Port> portMappings;
 	private List<Parameter> parameters;
 	private boolean privileged;
@@ -53,8 +53,16 @@ public class Docker {
 		this.parameters = parameters;
 	}
 
+	public boolean isForcePullImage() {
+		return forcePullImage;
+	}
+
+	public void setForcePullImage(boolean forcePullImage) {
+		this.forcePullImage = forcePullImage;
+	}
 	@Override
 	public String toString() {
 		return ModelUtils.toString(this);
 	}
+
 }
