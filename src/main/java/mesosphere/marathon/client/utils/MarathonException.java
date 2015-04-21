@@ -9,8 +9,15 @@ public class MarathonException extends Exception {
 		this.status = status;
 		this.message = message;
 	}
-	
-	@Override
+
+    /**
+     * Gets the HTTP status code of the failure, such as 404.
+     */
+    public int getStatus() {
+        return status;
+    }
+
+    @Override
 	public String getMessage() {
 		return message + " (http status: " + status + ")";
 	}
