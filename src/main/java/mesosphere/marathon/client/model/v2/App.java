@@ -22,6 +22,7 @@ public class App {
 	private Collection<Task> tasks;
 	private Integer tasksStaged;
 	private Integer tasksRunning;
+	private List<HealthCheck> healthChecks;
 
 	public String getId() {
 		return id;
@@ -158,6 +159,14 @@ public class App {
 
 	public void setTasksRunning(Integer tasksRunning) {
 		this.tasksRunning = tasksRunning;
+	}
+
+	public List<HealthCheck> getHealthChecks() {
+		return healthChecks;
+	}
+
+	public void setHealthChecks(List<HealthCheck> healthChecks) {
+		this.healthChecks = healthChecks;
 	}
 
 	@Override
